@@ -34,3 +34,14 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.data-point {
+  display: flex;
+  gap: 1rem;
+}
+
+
+/* FORECAST */
+.forecast-container {
+  visibility: hidden;
+}
