@@ -5,17 +5,17 @@ alerts
   []
 
 days
-  [0]: today
+  [1]: today
     feelslikemax: round
     feelslikemin: round
     feelslike: round
     precip: inches, round, if 0 < x < 1 = 'less than one inch'
     snowdepth: only display if > 0
     icon: use string for weather icon
-  [1]
+  [2]
     same as above sans 'feelslike'
     datetime: use to determine day of week
-  [2]
-    same
   [3]
+    same
+  [4]
     same
