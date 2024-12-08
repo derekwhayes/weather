@@ -1,5 +1,5 @@
 import "../styles/style.css";
-
+import {displayWeatherData} from "./dom.js";
 
 const getWeatherData = async () => {
   const response = await fetch(
@@ -7,21 +7,12 @@ const getWeatherData = async () => {
   );
   const weatherData = await response.json();
   const weatherObj = processWeatherData(weatherData);
-  console.log(weatherObj);
-  // displayWeatherData(weatherData);
+  displayWeatherData(weatherObj);
 };
 
 const processWeatherData = (weatherData) => {
-  const getDay = (dayNum) => {
-    // const d = new Date(weatherData.days[dayNum].datetime);
-    // console.log(d);
-    // return d.getDay();
-    
-    return new Intl.DateTimeFormat("en-US", {weekday: "long"}).format(new Date(weatherData.days[dayNum].datetime))
-  }
-
   const weatherObj = {
-    address: weatherData.resolvedAddress,
+    address: (weatherData.resolvedAddress).slice(0, (weatherData.resolvedAddress).lastIndexOf(',')),
     alerts: weatherData.alerts,
     today: {
       maxTemp: Math.round(weatherData.days[1].feelslikemax),
@@ -54,21 +45,5 @@ const processWeatherData = (weatherData) => {
   return weatherObj;
 
 }
-
-const displayWeatherData = (weatherData) => {
-  const tHead = document.querySelector("thead");
-  const currentTemp = document.querySelector(".temp");
-  const currentFeelsLike = document.querySelector(".feels-like");
-  const currentConditions = document.querySelector(".conditions");
-
-  tHead.innerText = weatherData.resolvedAddress;
-  currentTemp.innerText = weatherData.currentConditions.temp;
-  currentFeelsLike.innerText = weatherData.currentConditions.feelslike;
-  currentConditions.innerText = weatherData.currentConditions.conditions;
-
-  if (weatherData.currentConditions.snowdepth > 0) {
-
-  }
-};
 
 getWeatherData();
