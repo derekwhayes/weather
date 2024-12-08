@@ -39,9 +39,3 @@ img {
   display: flex;
   gap: 1rem;
 }
-
-
-/* FORECAST */
-.forecast-container {
-  visibility: hidden;
-}
