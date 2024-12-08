@@ -19,6 +19,10 @@ const displayWeatherData = (weatherData) => {
   currentTemp.innerText = weatherData.currentConditions.temp;
   currentFeelsLike.innerText = weatherData.currentConditions.feelslike;
   currentConditions.innerText = weatherData.currentConditions.conditions;
+
+  if (weatherData.currentConditions.snowdepth > 0) {
+    
+  }
 };
 
 getWeatherData();
