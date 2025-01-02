@@ -37,8 +37,52 @@ const displayWeatherData = (weatherObj) => {
 
 const setIcon = (icon) => {
     switch(icon) {
+        case "clear-day":
+            return clearDay;
+        case "clear-night":
+            return clearNight;
+        case "cloudy":
+            return cloudy;
+        case "fog":
+            return fog;
+        case "hail":
+            return hail;
+        case "partly-cloudy-day":
+            return partlyCloudyDay;
+        case "partly-cloudy-night":
+            return partlyCloudyNight;
+        case "rain-snow-showers-day":
+            return rainSnowShowersDay;
+        case "rain-snow-showers-night":
+            return rainSnowShowersNight;
+        case "rain-snow":
+            return rainSnow;
+        case "rain":
+            return rain;
+        case "showers-day":
+            return showersDay;
+        case "showers-night":
+            return showersNight;
+        case "sleet":
+            return sleet;
+        case "snow-showers-day":
+            return snowShowersDay;
+        case "snow-showers-night":
+            return snowShowersNight;
         case "snow":
             return snow;
+        case "thunder-rain":
+            return thunderRain;
+        case "thunder-showers-day":
+            return thunderShowersDay;
+        case "thunder-showers-night":
+            return thunderShowersNight;
+        case "thunder":
+            return thunder;
+        case "wind":
+            return wind;
+        default:
+            return "undefined";
     }
 }
 
