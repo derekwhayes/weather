@@ -17,11 +17,11 @@ const processWeatherData = (weatherData) => {
     today: {
       maxTemp: Math.round(weatherData.days[0].feelslikemax),
       minTemp: Math.round(weatherData.days[0].feelslikemin),
-      temp: Math.round(weatherData.days[0].feelslike),
+      temp: Math.round(weatherData.currentConditions.feelslike),
       precip: weatherData.days[0].precip,
       precipType: weatherData.days[0].preciptype,
       snowDepth: weatherData.days[0].snowdepth,
-      icon: weatherData.days[0].icon
+      icon: weatherData.currentConditions.icon
     },
     day2: {
       date: new Intl.DateTimeFormat("en-US", {weekday: "long"}).format(new Date(weatherData.days[1].datetime)),
