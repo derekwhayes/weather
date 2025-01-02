@@ -25,14 +25,19 @@ const displayWeatherData = (weatherObj) => {
     console.log(weatherObj);
     const location = document.querySelector(".location");
     const iconNow = document.querySelector(".icon-now");
-    const tempNow = document.querySelector(".tempNum")
+    const tempNow = document.querySelector(".tempNum");
+    const snowDepthNum = document.querySelector(".snow-depth-num");
+    const maxTempToday = document.querySelector(".max-temp-num");
+    const minTempToday = document.querySelector(".min-temp-num");
 
-    location.innerHTML = weatherObj.address
+    location.innerHTML = weatherObj.address;
 
     // set to appropriate icon
     iconNow.setAttribute("src", setIcon(weatherObj.today.icon));
+    tempNow.textContent = weatherObj.today.temp;
+    snowDepthNum.textContent  = weatherObj.today.snowDepth
 
-    tempNow.textContent = weatherObj.today.temp
+    
 }
 
 const setIcon = (icon) => {

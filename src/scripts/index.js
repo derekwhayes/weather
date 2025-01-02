@@ -20,7 +20,7 @@ const processWeatherData = (weatherData) => {
       temp: Math.round(weatherData.currentConditions.feelslike),
       precip: weatherData.days[0].precip,
       precipType: weatherData.days[0].preciptype,
-      snowDepth: weatherData.days[0].snowdepth,
+      snowDepth: weatherData.currentConditions.snowdepth,
       icon: weatherData.currentConditions.icon
     },
     day2: {
